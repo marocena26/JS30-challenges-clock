@@ -1,0 +1,14 @@
+.body {
+  /*General properties*/
+  background: url("../img/background.jpg");
+  background-size: cover;
+}
+
+.clock {
+}
+
+.clock-face {
+}
+
+.hand {
+}
