@@ -1,13 +1,30 @@
+:root {
+  --border-color: black;
+  --text-color: white;
+  --shadow-color: rgba(0, 0, 0, 0.4);
+  --play-color: #ffd700;
+  font-family: "Roboto Slab", serif;
+}
+
 .body {
   /*General properties*/
+  width: 100vw;
+  height: 100vh;
   background: url("../img/background.jpg");
   background-size: cover;
+  /*Display*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .clock {
-}
-
-.clock-face {
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  border: 5px solid var(--border-color);
+  background-color: var(--shadow-color);
+  box-shadow: 0 0 1rem var(--text-color);
 }
 
 .hand {
