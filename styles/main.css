@@ -2,7 +2,6 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Roboto Slab", serif;
 }
 
 :root {
@@ -12,6 +11,7 @@
   --hour-color: #c0c0c0;
   --min-color: #dcdcdc;
   --second-color: #808080;
+  font-family: "Poppins", sans-serif;
 }
 
 .body {
@@ -88,6 +88,7 @@
   background-color: var(--shadow-color);
   box-shadow: 0 0 1rem var(--text-color);
   font-size: 24px;
+  font-weight: 500;
   color: var(--min-color);
   /* grid */
   display: grid;
@@ -107,6 +108,7 @@
 .day {
   grid-area: day;
   text-transform: uppercase;
+  font-size: 28px;
 }
 
 .date-day {
