@@ -1,9 +1,16 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Slab", serif;
+}
+
 :root {
   --border-color: black;
   --text-color: white;
   --shadow-color: rgba(0, 0, 0, 0.4);
-  --play-color: #ffd700;
-  font-family: "Roboto Slab", serif;
+  --min-color: #f5deb3;
+  --second-color: #d2b48c;
 }
 
 .body {
@@ -25,7 +32,31 @@
   border: 5px solid var(--border-color);
   background-color: var(--shadow-color);
   box-shadow: 0 0 1rem var(--text-color);
+  position: relative;
 }
 
 .hand {
+  /*General properties*/
+  width: 45%;
+  height: 5px;
+  background: var(--border-color);
+
+  /*Position*/
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform-origin: 100%;
+  transform: rotate(90deg);
+  transition: all 0.05s;
+  transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+}
+
+.min-hand {
+  background-color: var(--border-color);
+  height: 3.8px;
+}
+
+.second-hand {
+  background-color: var(--border-color);
+  height: 2px;
 }
