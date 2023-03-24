@@ -9,8 +9,9 @@
   --border-color: black;
   --text-color: white;
   --shadow-color: rgba(0, 0, 0, 0.4);
-  --min-color: #f5deb3;
-  --second-color: #d2b48c;
+  --hour-color: #c0c0c0;
+  --min-color: #dcdcdc;
+  --second-color: #808080;
 }
 
 .body {
@@ -21,8 +22,10 @@
   background-size: cover;
   /*Display*/
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 30px;
 }
 
 .clock {
@@ -38,8 +41,8 @@
 .hand {
   /*General properties*/
   width: 45%;
-  height: 5px;
-  background: var(--border-color);
+  height: 5.2px;
+  background: var(--hour-color);
 
   /*Position*/
   position: absolute;
@@ -52,11 +55,68 @@
 }
 
 .min-hand {
-  background-color: var(--border-color);
-  height: 3.8px;
+  background-color: var(--min-color);
+  height: 3.3px;
 }
 
 .second-hand {
-  background-color: var(--border-color);
+  background-color: var(--second-color);
   height: 2px;
+}
+
+.point {
+  /*General properties*/
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: var(--border-color);
+  /*Position*/
+  z-index: 5;
+  position: absolute;
+  transform: translate(-12.5px, -12.5px);
+  top: 50%;
+  left: 50%;
+}
+
+.date {
+  /*General properties*/
+  z-index: 2;
+  width: 250px;
+  height: 100px;
+  border-radius: 16px;
+  border: 2px solid var(--border-color);
+  background-color: var(--shadow-color);
+  box-shadow: 0 0 1rem var(--text-color);
+  font-size: 24px;
+  color: var(--min-color);
+  /* grid */
+  display: grid;
+  grid-template-areas:
+    "day day day day"
+    "date month month year";
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  padding: 5px;
+  padding-left: clamp(15px, 4vw, 25px);
+  padding-right: clamp(15px, 4vw, 25px);
+  gap: 2px;
+}
+
+.day {
+  grid-area: day;
+  text-transform: uppercase;
+}
+
+.date-day {
+  grid-area: date;
+}
+
+.month {
+  grid-area: month;
+}
+
+.year {
+  grid-area: year;
 }

@@ -1,10 +1,39 @@
 "use strict";
 
 //-------------------CONST-------------------
-
+//time
 const secondHand = document.querySelector(".second-hand");
 const minHand = document.querySelector(".min-hand");
 const hourHand = document.querySelector(".hour-hand");
+
+//date
+const days = {
+  0: "Sunday",
+  1: "Monday",
+  2: "Tuesday",
+  3: "Wednesday",
+  4: "Thursday",
+  5: "Friday",
+  6: "Saturday",
+};
+const months = {
+  0: "JAN",
+  1: "FEB",
+  2: "MAR",
+  3: "APR",
+  4: "MAY",
+  5: "JUN",
+  6: "JUL",
+  7: "AUG",
+  8: "SEP",
+  9: "OCT",
+  10: "NOV",
+  11: "DEC",
+};
+const now = document.querySelector(".day");
+const todaysDate = document.querySelector(".date-day");
+const month = document.querySelector(".month");
+const year = document.querySelector(".year");
 
 //-------------------FUNCTIONS-------------------
 
@@ -25,6 +54,17 @@ function setDate() {
   const hour = today.getHours(); //obtenemos horas
   const hourDegrees = (hour / 12) * 360 + 90;
   hourHand.style.transform = `rotate(${hourDegrees}deg)`;
+
+  //date
+  const day = today.getDay();
+  const dayOfMonth = today.getDate();
+  const mon = today.getMonth();
+  const y = today.getFullYear().toString().substr(-2);
+
+  now.innerHTML = `${days[day]}`;
+  todaysDate.innerHTML = `${dayOfMonth}`;
+  month.innerHTML = `${months[mon]}`;
+  year.innerHTML = `'${y}`;
 }
 
 //Necesitamos que esa función se llame constantemente y cada segundo para que actualice el valor de nuestro campo de texto.
